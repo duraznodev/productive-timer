@@ -79,7 +79,9 @@ function TimerApp() {
                 }
               />
             )}
-            <span className="font-sans text-9xl">{actualCounter}</span>
+            <span className="font-sans text-6xl font-bold sm:text-9xl sm:font-medium">
+              {actualCounter}
+            </span>
             {counterState !== "start" && (
               <TimeSelector
                 text="Focus Length"
@@ -93,7 +95,7 @@ function TimerApp() {
               />
             )}
           </div>
-          <div className="row-start-4 flex items-start justify-center">
+          <div className="row-start-4 flex -translate-y-5 items-start justify-center sm:-translate-y-0">
             <ButtonsBox>
               <Button
                 icon={<FiRefreshCcw />}
