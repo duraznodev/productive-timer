@@ -1,4 +1,5 @@
 import { useEffect, useReducer, useRef, useState } from "react";
+import Audio from "./assets/finish-audio.mp3";
 import {
   FiBriefcase,
   FiCoffee,
@@ -116,7 +117,7 @@ function TimerApp() {
           </div>
         </div>
       </div>
-      <audio ref={audio} src="/src/audio/finish-audio.mp3"></audio>
+      <audio ref={audio} src={Audio}></audio>
     </div>
   );
 }
