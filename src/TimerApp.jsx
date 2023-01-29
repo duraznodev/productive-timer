@@ -49,6 +49,7 @@ function TimerApp() {
     onPause,
     onReset,
     onStart,
+    onToggleCounterState,
   } = useTimer({
     sessionLength,
     breakLength,
@@ -106,6 +107,7 @@ function TimerApp() {
               <Button
                 icon={counterType === "focus" ? <FiBriefcase /> : <FiCoffee />}
                 color={colors[color]}
+                onClick={onToggleCounterState}
                 rounded
               />
               <Button

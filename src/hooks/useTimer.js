@@ -29,6 +29,17 @@ export const useTimer = ({ sessionLength, breakLength, audio }) => {
     setSecondsLeft(setInitialCounter());
   };
 
+  const onToggleCounterState = () => {
+    if (counterType === "break") {
+      onFocus();
+      onReset();
+    }
+    if (counterType === "focus") {
+      onBreak();
+      onReset();
+    }
+  };
+
   const onStart = () => setCounterState("start");
   const onPause = () => setCounterState("stop");
   const onReset = () => setCounterState("reset");
@@ -53,12 +64,13 @@ export const useTimer = ({ sessionLength, breakLength, audio }) => {
       }
       return () => clearInterval(interval);
     }
-  }, [counterState, secondsLeft]);
+  }, [counterState, secondsLeft, counterType]);
 
   return {
     onPause,
     onReset,
     onStart,
+    onToggleCounterState,
     actualCounter,
     counterState,
     counterType,
